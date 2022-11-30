@@ -1,4 +1,9 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateTuitDto } from './create-tuit.dto';
+import { IsNumber } from 'class-validator';
 
-export class UpdateTuitDto extends PartialType(CreateTuitDto) {}
+export class UpdateTuitDto {
+  @IsNumber()
+  likes: number;
+
+  @IsNumber()
+  retuits: number;
+}
